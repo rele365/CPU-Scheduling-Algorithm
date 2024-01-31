@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CPU Scheduling Simulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scroll bars */
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://1.bp.blogspot.com/-8Ik7Q_Q6MaM/XaoLq-HEwFI/AAAAAAAANeE/tw7vbrECKEUL7_-n-RuehmZfxJX_EhaDgCLcBGAsYHQ/w1200-h630-p-k-no-nu/Best-Budget-Processor-CPU.png'); /* Replace 'welcomeImg.jpeg' with your image URL */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(5px); /* Optional: Add a blur effect to the background */
+            z-index: -1; /* Place the background behind other content */
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent black overlay */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place the overlay behind other content */
+        }
+
+        h1 {
+            background-color: #89CFF0;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .algorithm-selector, .input-form, .results {
+            margin: 20px;
+        }
+
+        .results {
+            border: 1px solid #ccc;
+            padding: 10px;
+            display: none; /* Initially hide the results block */
+            background-color: rgba(255, 255, 255, 0.8); /* Adjust the alpha (fourth value) for transparency */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+
+        #welcome-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="background-container"></div>
+<div class="overlay"></div>
+<img src="welcomeImg.jpeg" id="welcome-image" alt="Welcome Image">
+<h1 id="algorithmHeading">CPU Scheduling Simulation</h1>
+
+<!-- Algorithm selection -->
+<div class="algorithm-selector">
+    <label for="algorithm">Select Algorithm:</label>
+    <select id="algorithm">
+        <option value="fcfs">First Come First Served</option>
+        <option value="sjf">Shortest Job First</option>
+        <option value="ljf">Longest Job First</option>
+    </select>
+</div>
+
+<!-- Simulate button -->
+<button id="simulateButton">Simulate</button>
+
+<!-- Results -->
+<div class="results" id="results">
+    <h2>Simulation Results</h2>
+    <table id="simulationTable">
+        <thead>
+        <tr>
+            <th>Process ID</th>
+            <th>Burst Time</th>
+            <th>Waiting Time</th>
+        </tr>
+        </thead>
+        <tbody id="rrTableBody"></tbody> 
+           </table>
+    <br>
+    <br>
+    <p id="averageWaitTime">Average Wait Time:</p>
+</div>
+
+<script src="script.js">
+   
+</script>
+</body>
+</html>
+
